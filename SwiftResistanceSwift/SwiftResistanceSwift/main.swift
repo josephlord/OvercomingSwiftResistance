@@ -8,7 +8,7 @@
 
 import Foundation
 
-let NUMBER_OF_ITERATIONS = 30
+let NUMBER_OF_ITERATIONS = 5
 
 #if DEBUG
 let BASELINE: Float = 0.099769
@@ -37,4 +37,4 @@ let timing1 = timing(10, NUMBER_OF_ITERATIONS) { n in unsafeMutablePointerTest(n
 println("UnsafeMutablePointer<Pixel> avg time: \(timing1.avg)s, stddev: \(timing1.stddev)s, diff: \(timing1.diff)%")
 
 let timing2 = timing(10, NUMBER_OF_ITERATIONS) { n in pixelArrayTest(n) }
-println("UnsafeMutablePointer<Pixel> avg time: \(timing2.avg)s, stddev: \(timing2.stddev)s, diff: \(timing2.diff)%")
+println("[Pixel] avg time: \(timing2.avg)s, stddev: \(timing2.stddev)s, diff: \(timing2.diff)%")
