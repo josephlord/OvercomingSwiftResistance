@@ -15,3 +15,7 @@ Objc (-O0) 0.38 (9.1)	      Swift -ONone [Pixel] 13.8 (327)
 1.83979213101241	1
 9.0996686318213	326.72333954698
 
+Split into framework. Working but lots of warnings about duplication of Swift Library functions like this:
+objc[86446]: Class _TtC6AppKit15REPLApplication is implemented in both /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/PerformanceCritical.framework/Versions/A/Frameworks/libswiftAppKit.dylib and /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/SwiftResistanceSwift. One of the two will be used. Which one is undefined.
+
+With the library compiled with -O the rest of the application can be compiled with -Onone and still complete in 0.043 for 100 iterations.
