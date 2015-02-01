@@ -11,9 +11,9 @@ import Foundation
 let NUMBER_OF_ITERATIONS = 30
 
 #if DEBUG
-let BASELINE: Float = 0.099769
+let BASELINE: Float = 0.009574
 #else
-let BASELINE: Float = 0.020427
+let BASELINE: Float = 0.009482
 #endif
 
 func timing(samples: Int, iterations: Int, fn: (Int) -> Float) -> (avg: Float, stddev: Float, diff: Int) {

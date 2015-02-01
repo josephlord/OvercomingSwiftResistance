@@ -7,19 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RenderGradient.h"
 
-typedef struct {
-    uint8_t red;
-    uint8_t blue;
-    uint8_t green;
-    uint8_t alpha;
-} Pixel;
-
-typedef struct {
-    Pixel *pixels;
-    int width;
-    int height;
-} RenderBuffer, *RenderBufferRef;
 
 RenderBufferRef RenderBufferCreate(int width, int height)
 {
@@ -46,18 +35,6 @@ void RenderBufferRelease(RenderBufferRef buffer)
     
     buffer->width = 0;
     buffer->height = 0;
-}
-
-void RenderGradient(RenderBufferRef buffer, int offsetX, int offsetY)
-{
-    int offset = 0;
-    for (int y = 0, height = buffer->height; y < height; ++y) {
-        for (int x = 0, width = buffer->width; x < width; ++x) {
-            Pixel pixel = { 0, y + offsetY, x + offsetX, 0xFF };
-            buffer->pixels[offset] = pixel;
-            ++offset;
-        }
-    }
 }
 
 
