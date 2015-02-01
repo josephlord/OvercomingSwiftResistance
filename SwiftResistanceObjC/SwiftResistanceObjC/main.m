@@ -66,7 +66,7 @@ int main(int argc, const char * argv[]) {
     
     RenderBufferRef buffer = RenderBufferCreate(960, 540);
     
-    const int NUMER_OF_ITERATIONS = 100;
+    const int NUMER_OF_ITERATIONS = 30;
     for (int i = 0; i < NUMER_OF_ITERATIONS; ++i) {
         RenderGradient(buffer, i, i * 2);
     }

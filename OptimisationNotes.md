@@ -23,3 +23,10 @@ Split into framework. Working but lots of warnings about duplication of Swift Li
 objc[86446]: Class _TtC6AppKit15REPLApplication is implemented in both /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/PerformanceCritical.framework/Versions/A/Frameworks/libswiftAppKit.dylib and /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/SwiftResistanceSwift. One of the two will be used. Which one is undefined.
 
 With the library compiled with -O the rest of the application can be compiled with -Onone and still complete in 0.043 for 100 iterations.
+
+Returning to 30 iterations for proper comparison.
+
+Obj-C -Os 0.027     Swift -O 0.014
+Obj-C -O0 0.11      Swift -ONone 0.014 
+
+Note that this is effectively cheating by wrapping the critical code in a framework but if this allows the bulk of the project to be debugable this is a worthwhile tradeoff.
