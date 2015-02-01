@@ -50,12 +50,17 @@ void RenderBufferRelease(RenderBufferRef buffer)
 
 void RenderGradient(RenderBufferRef buffer, int offsetX, int offsetY)
 {
-    int offset = 0;
-    for (int y = 0, height = buffer->height; y < height; ++y) {
-        for (int x = 0, width = buffer->width; x < width; ++x) {
-            Pixel pixel = { 0, y + offsetY, x + offsetX, 0xFF };
-            buffer->pixels[offset] = pixel;
-            ++offset;
+    Pixel* pixels = buffer->pixels;
+    const int width = buffer->width;
+    const int height = buffer->height;
+    //int offset = 0;
+    for (int y = 0; y < height; ++y) {
+        const int row = y * width;
+        for (int x = 0; x < width; ++x) {
+            const int offset = row + x;
+            pixels[offset].green = y + offsetY;
+            pixels[offset].blue = x + offsetX;
+            // ++offset;
         }
     }
 }
