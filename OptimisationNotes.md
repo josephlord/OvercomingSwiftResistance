@@ -31,3 +31,11 @@ Obj-C -Os 0.027     Swift -O 0.014
 Obj-C -O0 0.11      Swift -ONone 0.014 
 
 Note that this is effectively cheating by wrapping the critical code in a framework but if this allows the bulk of the project to be debugable this is a worthwhile tradeoff. This is definitely a workaround but one that can be effective. Not sure how to get rid of the warnigns.
+
+Added a monolithic build target with debug (very slow) and optimised schemes to go with it. 
+
+Note all timings taken on:
+
+MacBook Pro11,32
+
+Intel Core i7 2.3GHz 4 core L2 256KB/core L3 6MB 16GB RAM 
