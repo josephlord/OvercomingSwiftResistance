@@ -1,4 +1,4 @@
-Optimisation Notes
+# Optimisation Notes
 
 This relates to http://owensd.io/2015/01/31/swift-resistance-explored.html
 
@@ -13,11 +13,11 @@ My plan of development is first to make the optimised version as fast as possibl
 Update to `withUnsafeMutableBufferPointer` and `for x in 0..<width`. Speed up to 0.013 (optimised -O)
 
 Switch to 100 iterations for more stability in optimised results. Optimised Swift is 84% faster than the Objective-C Code
+
 Objc (-Os) 0.077(1.8) 	    Swift -O [Pixel] 0.042 (1)
+
 Objc (-O0) 0.38 (9.1)	      Swift -ONone [Pixel] 13.8 (327)
 
-1.83979213101241	1
-9.0996686318213	326.72333954698
 
 Split into framework. Working but lots of warnings about duplication of Swift Library functions like this:
 objc[86446]: Class _TtC6AppKit15REPLApplication is implemented in both /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/PerformanceCritical.framework/Versions/A/Frameworks/libswiftAppKit.dylib and /Users/josephl/Library/Developer/Xcode/DerivedData/SwiftResistanceSwift-gvtjeqrlaieihehdoynetptwibsp/Build/Products/Debug/SwiftResistanceSwift. One of the two will be used. Which one is undefined.
@@ -27,6 +27,7 @@ With the library compiled with -O the rest of the application can be compiled wi
 Returning to 30 iterations for proper comparison.
 
 Obj-C -Os 0.027     Swift -O 0.014
+
 Obj-C -O0 0.11      Swift -ONone 0.014 
 
-Note that this is effectively cheating by wrapping the critical code in a framework but if this allows the bulk of the project to be debugable this is a worthwhile tradeoff.
+Note that this is effectively cheating by wrapping the critical code in a framework but if this allows the bulk of the project to be debugable this is a worthwhile tradeoff. This is definitely a workaround but one that can be effective. Not sure how to get rid of the warnigns.
