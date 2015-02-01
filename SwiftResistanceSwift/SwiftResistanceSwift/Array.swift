@@ -34,9 +34,21 @@ struct RenderBuffer {
 
 func RenderGradient(inout buffer: RenderBuffer, offsetX: Int, offsetY: Int)
 {
+    let height = buffer.height
+    let width = buffer.width
+    buffer.pixels.withUnsafeMutableBufferPointer { pixels->() in
+        for y in 0..<height {
+            let row = y * width
+            for x in 0..<width {
+                let i = row + x
+                pixels[i].green = Byte((y + offsetY) & 0xFF)
+                pixels[i].blue = Byte((x + offsetX) & 0xFF)
+            }
+        }
+    }
     // I truly hope you have turned down the number of iterations or you have picked
-    // up a new build of Swift where this is not dog slow with -Onone.
-    var offset = 0
+    // up a new build of Swift where this is not dog slow with -Onone./*
+/*    var offset = 0
     for (var y = 0, height = buffer.height; y < height; ++y) {
         for (var x = 0, width = buffer.width; x < width; ++x) {
             let pixel = Pixel(
@@ -48,10 +60,10 @@ func RenderGradient(inout buffer: RenderBuffer, offsetX: Int, offsetY: Int)
             ++offset;
         }
     }
-    
+*/
     // Turn this code on for at least some sanity back to your debug builds. It's still
     // going to be slow, but at compared to the code above, it's going to feel glorious.
-    //        buffer.pixels.withUnsafeMutableBufferPointer { (inout p: UnsafeMutableBufferPointer<Pixel>) -> () in
+    //buffer.pixels.withUnsafeMutableBufferPointer { (inout p: UnsafeMutableBufferPointer<Pixel>) -> () in
     //            var offset = 0
     //            for (var y = 0, height = buffer.height; y < height; ++y) {
     //                for (var x = 0, width = buffer.width; x < width; ++x) {
