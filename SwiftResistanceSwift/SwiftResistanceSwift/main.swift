@@ -8,7 +8,7 @@
 
 import Foundation
 
-let NUMBER_OF_ITERATIONS = 30
+let NUMBER_OF_ITERATIONS = 100
 
 #if DEBUG
 let BASELINE: Float = 0.099769
