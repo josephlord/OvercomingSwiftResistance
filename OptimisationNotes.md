@@ -1,5 +1,9 @@
 Optimisation Notes
 
+This relates to http://owensd.io/2015/01/31/swift-resistance-explored.html
+
+I don't dispute that Debug Swift is slow, this isn't news to me. I talked about it back in October: http://blog.human-friendly.com/swift-optimisation-again-slides-from-swift-london-21st-october-2014 but I do think it can be worked around and personally I would rather take the 80% speedup in release over Objective-C and accept the 36 times slower debug compared with objective-c (327 times slower than optimised Swift).
+
 Initially Obj-C (Os) and Swift (-O) are almost identical times whether using multable array or not. (0.022)
 
 I've separated the the array code into separate functions rather defining everything within a toplevel function.
