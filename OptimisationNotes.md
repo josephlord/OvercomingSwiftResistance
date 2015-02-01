@@ -36,6 +36,6 @@ Added a monolithic build target with debug (very slow) and optimised schemes to 
 
 Note all timings taken on:
 
-MacBook Pro11,32
+MacBook Pro11,3
 
 Intel Core i7 2.3GHz 4 core L2 256KB/core L3 6MB 16GB RAM 
