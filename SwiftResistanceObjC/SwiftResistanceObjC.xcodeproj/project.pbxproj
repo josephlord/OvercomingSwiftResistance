@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CE8127C1A7CA3E100AA8333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE8127B1A7CA3E100AA8333 /* main.m */; };
+		6CFBE0F81A7DF91D00CA6D30 /* RenderGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBE0F71A7DF91D00CA6D30 /* RenderGradient.m */; settings = {COMPILER_FLAGS = "-Os"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		6CE812781A7CA3E100AA8333 /* SwiftResistanceObjC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftResistanceObjC; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE8127B1A7CA3E100AA8333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6CFBE0F71A7DF91D00CA6D30 /* RenderGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderGradient.m; sourceTree = "<group>"; };
+		6CFBE0F91A7DF93F00CA6D30 /* RenderGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderGradient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				6CE8127B1A7CA3E100AA8333 /* main.m */,
+				6CFBE0F91A7DF93F00CA6D30 /* RenderGradient.h */,
+				6CFBE0F71A7DF91D00CA6D30 /* RenderGradient.m */,
 			);
 			path = SwiftResistanceObjC;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CE8127C1A7CA3E100AA8333 /* main.m in Sources */,
+				6CFBE0F81A7DF91D00CA6D30 /* RenderGradient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +238,7 @@
 				6CE812811A7CA3E100AA8333 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
