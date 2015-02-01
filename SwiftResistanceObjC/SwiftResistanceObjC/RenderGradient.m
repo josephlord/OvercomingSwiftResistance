@@ -16,7 +16,7 @@ void RenderGradient(RenderBufferRef buffer, int offsetX, int offsetY)
     
     for (int y = offsetY; y < height; ++y) {
         for (int x = offsetX; x < width; ++x) {
-            *pixel = 0xFF << 24 | x << 16 | y << 8 | 0xAD;
+            *pixel = 0xFF << 24 | (x & 0xFF) << 16 | (y & 0xFF) << 8;
             ++pixel;
         }
     }
